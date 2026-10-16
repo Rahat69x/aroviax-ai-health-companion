@@ -13,6 +13,7 @@ import {
   SlidersHorizontal,
 } from "lucide-react";
 import { DisplayControlsModal } from "./DisplayControlsModal";
+import { useAccessibility } from "@/context/AccessibilityContext";
 
 interface NavbarProps {
   onOpenSafetyModal: () => void;
@@ -22,14 +23,15 @@ export function Navbar({ onOpenSafetyModal }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showEmergencyBanner, setShowEmergencyBanner] = useState(true);
   const [displayModalOpen, setDisplayModalOpen] = useState(false);
+  const { language, setLanguage, dictionary } = useAccessibility();
 
   const navLinks = [
-    { name: "Home", href: "/#hero" },
-    { name: "Features", href: "/#features" },
-    { name: "How It Works", href: "/#how-it-works" },
-    { name: "Health Tools", href: "/#health-tools" },
-    { name: "Safety", href: "/safety" },
-    { name: "FAQ", href: "/#faq" },
+    { name: dictionary.nav.home, href: "/#hero" },
+    { name: dictionary.nav.features, href: "/#features" },
+    { name: dictionary.nav.howItWorks, href: "/#how-it-works" },
+    { name: dictionary.nav.tools, href: "/#health-tools" },
+    { name: dictionary.nav.safety, href: "/safety" },
+    { name: dictionary.nav.faq, href: "/#faq" },
   ];
 
   const handleLinkClick = () => {
@@ -49,8 +51,7 @@ export function Navbar({ onOpenSafetyModal }: NavbarProps) {
             <div className="max-w-7xl mx-auto flex items-center gap-2 font-medium">
               <ShieldAlert className="w-4 h-4 text-[#B45309] shrink-0" aria-hidden="true" />
               <span>
-                <strong>Not for emergencies:</strong> If you are experiencing a medical emergency,
-                call local emergency services (like 911) or visit an emergency room immediately.
+                <strong>{dictionary.emergencyAlert}:</strong> {dictionary.emergencyNotice}
               </span>
             </div>
             <button
@@ -60,6 +61,13 @@ export function Navbar({ onOpenSafetyModal }: NavbarProps) {
             >
               <X className="w-3.5 h-3.5" />
             </button>
+          </div>
+        )}
+
+        {/* Translation disclaimer banner when BN is active */}
+        {language === "bn" && (
+          <div className="bg-[#E8F6F4] border-b border-[#0D817C]/20 px-4 py-1.5 text-xs text-[#0D817C] text-center font-medium">
+            <span><strong>ভাষা নোটিশ:</strong> {dictionary.translationDisclaimer}</span>
           </div>
         )}
 
@@ -85,7 +93,7 @@ export function Navbar({ onOpenSafetyModal }: NavbarProps) {
                   </span>
                 </div>
                 <span className="text-xs text-[#64748B] hidden md:inline">
-                  Healthcare conversation preparation
+                  {dictionary.tagline}
                 </span>
               </div>
             </Link>
@@ -106,8 +114,37 @@ export function Navbar({ onOpenSafetyModal }: NavbarProps) {
               ))}
             </nav>
 
-            {/* Right Action Controls: Display + Try Assistant */}
-            <div className="hidden sm:flex items-center gap-3">
+            {/* Right Action Controls: Language Toggle + Display + Try Assistant */}
+            <div className="hidden sm:flex items-center gap-2.5">
+              {/* Language Selector */}
+              <div className="flex items-center rounded-xl border border-[#E2E8F0] bg-white p-0.5 text-xs font-semibold">
+                <button
+                  type="button"
+                  onClick={() => setLanguage("en")}
+                  className={`px-2.5 py-1 rounded-lg transition-colors ${
+                    language === "en"
+                      ? "bg-[#0D817C] text-white"
+                      : "text-[#64748B] hover:text-[#334155]"
+                  }`}
+                  aria-label="Switch to English"
+                >
+                  EN
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLanguage("bn")}
+                  className={`px-2.5 py-1 rounded-lg transition-colors ${
+                    language === "bn"
+                      ? "bg-[#0D817C] text-white"
+                      : "text-[#64748B] hover:text-[#334155]"
+                  }`}
+                  title="বাংলা ভাষায় পরিবর্তন করুন"
+                  aria-label="Switch to Bangla"
+                >
+                  বাংলা
+                </button>
+              </div>
+
               {/* Compact Display Control (A11y & Contrast) */}
               <button
                 type="button"
@@ -124,13 +161,35 @@ export function Navbar({ onOpenSafetyModal }: NavbarProps) {
                 href="/assistant"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm text-white bg-[#0D817C] hover:bg-[#086B67] active:scale-[0.98] shadow-sm transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0D817C]"
               >
-                <span>Try the Assistant</span>
+                <span>{dictionary.nav.assistant}</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
 
             {/* Mobile Controls */}
-            <div className="flex lg:hidden items-center gap-2">
+            <div className="flex lg:hidden items-center gap-1.5">
+              {/* Mobile Language Switcher */}
+              <div className="flex items-center rounded-lg border border-[#E2E8F0] bg-white p-0.5 text-xs font-semibold">
+                <button
+                  type="button"
+                  onClick={() => setLanguage("en")}
+                  className={`px-2 py-0.5 rounded text-[11px] ${
+                    language === "en" ? "bg-[#0D817C] text-white" : "text-[#64748B]"
+                  }`}
+                >
+                  EN
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLanguage("bn")}
+                  className={`px-2 py-0.5 rounded text-[11px] ${
+                    language === "bn" ? "bg-[#0D817C] text-white" : "text-[#64748B]"
+                  }`}
+                >
+                  বাং
+                </button>
+              </div>
+
               <button
                 type="button"
                 onClick={() => setDisplayModalOpen(true)}
@@ -139,13 +198,6 @@ export function Navbar({ onOpenSafetyModal }: NavbarProps) {
               >
                 <SlidersHorizontal className="w-4 h-4 text-[#0D817C]" />
               </button>
-
-              <Link
-                href="/assistant"
-                className="px-3 py-1.5 text-xs font-semibold text-white bg-[#0D817C] hover:bg-[#086B67] rounded-lg"
-              >
-                Try Assistant
-              </Link>
 
               <button
                 type="button"
@@ -213,7 +265,7 @@ export function Navbar({ onOpenSafetyModal }: NavbarProps) {
                   onClick={handleLinkClick}
                   className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-center font-semibold text-white bg-[#0D817C] hover:bg-[#086B67] shadow-sm"
                 >
-                  Try the Assistant
+                  {dictionary.nav.assistant}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

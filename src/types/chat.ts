@@ -13,6 +13,8 @@ export interface ChatMessage {
   generalInformation?: string;
   whatImUnsureAbout?: string;
   whenToSeekCare?: string;
+  provider?: "live-ai" | "deterministic-fallback";
+  modelUsed?: string;
 }
 
 export interface ChatRequest {
@@ -34,4 +36,6 @@ export interface ChatResponse {
   confidenceNote?: string;
   requestId: string;
   timestamp: string;
+  provider?: "live-ai" | "deterministic-fallback";
+  modelUsed?: string;
 }
