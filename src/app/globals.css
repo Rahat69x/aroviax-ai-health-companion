@@ -1,26 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary-teal: #0D817C;
+  --dark-teal: #086B67;
+  --pale-teal: #E8F6F4;
+  --white: #FFFFFF;
+  --deep-navy: #172554;
+  --main-text: #334155;
+  --secondary-text: #64748B;
+  --page-bg: #F8FAFC;
+  --border-slate: #E2E8F0;
+  --warning-accent: #B45309;
+  --error-accent: #B91C1C;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-primary-teal: #0D817C;
+  --color-dark-teal: #086B67;
+  --color-pale-teal: #E8F6F4;
+  --color-deep-navy: #172554;
+  --color-main-text: #334155;
+  --color-secondary-text: #64748B;
+  --color-page-bg: #F8FAFC;
+  --color-border-slate: #E2E8F0;
+  --color-warning: #B45309;
+  --color-error: #B91C1C;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--page-bg);
+  color: var(--main-text);
+  font-family: var(--font-inter), "Hind Siliguri", "Kalpurush", "SolaimanLipi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Bangla Typography Enhancements (proper line height to prevent diacritic clipping) */
+html[lang="bn"],
+.font-bangla {
+  font-family: "Hind Siliguri", "Kalpurush", "SolaimanLipi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  line-height: 1.75 !important;
+}
+
+/* Accessibility: Text Size Classes */
+html.text-size-large {
+  font-size: 115%;
+}
+
+html.text-size-xl {
+  font-size: 130%;
+}
+
+/* Accessibility: High Contrast Mode */
+html.high-contrast {
+  --main-text: #000000;
+  --secondary-text: #262626;
+  --primary-teal: #086B67;
+  --bg-slate: #ffffff;
+}
+
+html.high-contrast * {
+  border-color: #525252 !important;
+}
+
+html.high-contrast a,
+html.high-contrast button {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+}
+
+/* Accessibility: Dyslexia-Friendly Typography */
+html.font-dyslexia body {
+  font-family: Comic Sans MS, Chalkboard SE, "OpenDyslexic", sans-serif !important;
+  letter-spacing: 0.05em !important;
+  word-spacing: 0.15em !important;
+  line-height: 1.8 !important;
+}
+
+/* Custom focus visible ring for maximum accessibility */
+:focus-visible {
+  outline: 2px solid var(--primary-teal, #0D817C);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print Stylesheet for Visit Prep Kit */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  header, nav, footer, .no-print, button, input[type="text"] {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .printable-card {
+    border: 1px solid #000000 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    padding: 1.5rem !important;
+  }
 }

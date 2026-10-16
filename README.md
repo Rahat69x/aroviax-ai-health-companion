@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MediSupport AI
 
-## Getting Started
+> **A Patient-Centric, Non-Diagnostic Healthcare Communication Assistant**  
+> Built for the AI Healthcare Support Hackathon using Next.js 16 (Turbopack), React 19, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+---
+
+## 🏥 Overview & Purpose
+
+**MediSupport AI** is designed to bridge the communication gap between patients, caregivers, and licensed healthcare professionals. It empowers users to articulate symptoms clearly, organize clinical timelines, deconstruct complex medical terminology, redact sensitive personal health identifiers, and prepare actionable questions for clinical consultations.
+
+### Core Non-Diagnostic Invariants
+1. **Never Diagnoses:** The system strictly refuses to speculate on definitive clinical conditions or calculate diagnostic probabilities.
+2. **Emergency Detection:** Employs a conservative real-time keyword safety engine (`EMERGENCY_PHRASE_LIST`) that detects acute cardiac, neurological, respiratory, and pediatric warning signs, displaying prominent emergency dispatch notices (e.g., 911 / 999).
+3. **Transparent Uncertainty:** AI responses explicitly itemize what is unknown or what requires physical in-person examination.
+4. **Privacy-First (Device-Side Processing):** PHI/PII inspection, redaction, and sensitive health journals operate entirely on the user's local device without external transmission.
+
+---
+
+## 🎨 Design System & Color Palette
+
+MediSupport AI adheres to a modern, calm, accessible healthcare aesthetic:
+
+| Role | Color Name | Hex Code |
+| :--- | :--- | :--- |
+| **Primary Accent** | Primary Teal | `#0D817C` |
+| **Active / Hover** | Dark Teal | `#086B67` |
+| **Surface** | White | `#FFFFFF` |
+| **Headings & Brand** | Deep Navy | `#172554` |
+| **Body Text** | Slate | `#334155` |
+| **Muted Text** | Cool Grey | `#64748B` |
+| **Page Background** | Off-White Slate | `#F8FAFC` |
+| **Panels & Accents** | Pale Teal | `#E8F6F4` |
+| **Borders** | Slate Border | `#E2E8F0` |
+| **Warning** | Amber | `#B45309` |
+| **Error / Emergency** | Crimson Red | `#B91C1C` |
+
+---
+
+## 🚀 Key Features
+
+MediSupport AI includes 10 integrated healthcare communication tools accessible via the unified `/assistant` workspace and homepage:
+
+1. **Guided Symptom Organizer (`/assistant?tab=symptom-organizer`)**
+   - 6-step structured questionnaire capturing onset, duration, user-rated severity (0–10), qualities, bodily location, triggers, relieving factors, and doctor questions.
+   - Outputs a clean, non-diagnostic printable summary.
+
+2. **Doctor Visit Preparation Kit (`/assistant?tab=prepkit`)**
+   - Pre-appointment planner generating structured 1-page summaries for clinicians.
+   - Features caregiver attribution, medication checklists, and "What to Bring" items.
+
+3. **Medical Term Explainer (`/assistant?tab=translator`)**
+   - Demystifies medical jargon across three distinct literacy levels: *Simple*, *Standard*, and *Detailed*.
+   - Includes mandatory *"What this does NOT tell you"* limitations and physician discussion questions.
+
+4. **Document Explainer (`/assistant?tab=document`)**
+   - Scans uploaded lab reports or discharge summaries.
+   - Redacts PII/PHI client-side, extracts physiological concepts (CBC, lipid panel, renal function, glucose), and flags laboratory reference range ambiguities.
+
+5. **Personal Health Notes & Timeline (`/assistant?tab=notes`)**
+   - Device-side journal for tracking blood pressure, blood glucose, and daily health milestones.
+   - Tagging, search, and JSON export.
+
+6. **Medication Information Organizer (`/assistant?tab=medication`)**
+   - Tracks active prescriptions, instructions, and start dates without automated dosage interpretation.
+   - Provides ready-to-ask pharmacist questions.
+
+7. **Trusted Health Sources Finder (`/assistant?tab=sources`)**
+   - Curated directory of verified public health institutions (NIH, MedlinePlus, CDC, WHO, NHS, DGHS Bangladesh).
+   - Zero hallucinated citations; links directly to primary authoritative sources.
+
+8. **After-Visit Notes Clarifier (`/assistant?tab=aftervisit`)**
+   - Organizes post-appointment clinician instructions, new prescriptions, and follow-up milestones into actionable checklists.
+
+9. **Symptom Journal & Trends (`/assistant?tab=journal`)**
+   - Multi-day symptom tracking with subjective severity graphs and history review.
+
+10. **Interactive AI Consultation Chat (`/assistant?tab=chat`)**
+    - Empathetic conversational interface supporting standard chat, caregiver mode, and local-only mode.
+    - Full transparency accordion detailing model confidence, limitations, and physician questions.
+
+---
+
+## ♿ Accessibility & Usability Suite
+
+- **Bilingual Support:** Full English (EN) and Bengali (BN — বাংলা) localization with cultural sensitivity notices.
+- **Visual Adjustments:** Font scaling (Normal, Large, Extra Large), High Contrast toggle, and Dyslexia-Friendly typography support.
+- **Reduced Motion:** Fully honors `prefers-reduced-motion` settings.
+- **ARIA & Keyboard Navigation:** Comprehensive keyboard focus rings, role descriptors, and screen reader labels.
+
+---
+
+## 🔌 Backend REST API Interfaces
+
+MediSupport AI provides comprehensive Next.js server-side API endpoints:
+
+- `POST /api/chat` — Conservative non-diagnostic conversational responses with emergency interception.
+- `POST /api/symptom-summary` — Formats structured symptom summaries and verifies safety signals.
+- `POST /api/appointment-checklist` — Generates 1-page clinician appointment summaries.
+- `POST /api/medical-terms/explain` — Deconstructs medical terminology into 3 reading levels.
+- `POST /api/documents/analyze` — Redacts PHI/PII, extracts clinical concepts, and flags lab ambiguities.
+- `GET /api/health-notes` & `POST /api/health-notes` — Lists and creates personal health notes.
+- `GET /api/health-notes/[id]`, `PUT /api/health-notes/[id]`, `DELETE /api/health-notes/[id]` — CRUD operations for individual notes.
+- `GET /api/medications` & `POST /api/medications` — Retrieves and records user-entered medications.
+- `GET /api/medical-sources/search` — Queries and filters verified medical knowledge repositories.
+
+---
+
+## 🧪 Testing & Verification
+
+The project includes 23 unit tests verifying safety invariants, privacy inspection, visit summary generation, and backend services:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Run unit test suite
+npm test
+
+# Run ESLint validation
+npm run lint
+
+# Build production bundle with Next.js Turbopack
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Verification Results
+- **Unit Tests:** 23 passing, 0 failing (100% pass rate)
+- **ESLint:** 0 errors, 0 warnings
+- **Production Build:** Static pages (17/17 routes) and dynamic API routes compiled cleanly with zero build errors.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 💻 Getting Started Locally
 
-## Learn More
+```bash
+# 1. Install dependencies
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# 2. Start local development server
+npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 3. Open in browser
+# http://localhost:3000
+```
