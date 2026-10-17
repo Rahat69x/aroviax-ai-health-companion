@@ -108,23 +108,49 @@ MediSupport AI provides comprehensive Next.js server-side API endpoints:
 
 ## 🧪 Testing & Verification
 
-The project includes 23 unit tests verifying safety invariants, privacy inspection, visit summary generation, and backend services:
+The project includes **42 automated unit tests** verifying safety invariants, privacy inspection, visit summary generation, backend services, multilingual i18n, and AI provider integration:
 
 ```bash
-# Run unit test suite
+# Run full unit test suite (42 tests)
 npm test
 
-# Run ESLint validation
+# Run ESLint validation (0 errors, 0 warnings)
 npm run lint
 
-# Build production bundle with Next.js Turbopack
+# Build production bundle with Next.js 16 Turbopack
 npm run build
 ```
 
 ### Verification Results
-- **Unit Tests:** 23 passing, 0 failing (100% pass rate)
-- **ESLint:** 0 errors, 0 warnings
-- **Production Build:** Static pages (17/17 routes) and dynamic API routes compiled cleanly with zero build errors.
+- **Unit Tests:** 42 passing across 9 test suites, 0 failing (100% pass rate)
+  - tests/aiProvider.test.mjs (5 tests): Pluggable AI provider configuration, deterministic offline fallback, non-diagnostic boundaries, emergency signal pre-emption, and mode specialization.
+  - tests/backendServices.test.mjs (6 tests): Symptom summary formatting, safety verification, medical terms lookup, trusted sources search, health notes store, and medication management.
+  - tests/documentProcessing.test.mjs (3 tests): PII/PHI detection and client-side redaction from clinical reports, physiological concept extraction, and 50 KB file threshold enforcement.
+  - tests/healthNotesExtended.test.mjs (4 tests): Dated note lifecycle, timestamp calculation, deletion by ID, and case-insensitive multi-attribute search across titles, bodies, and tags.
+  - tests/i18n.test.mjs (4 tests): Dual English (EN) and Bangla (BN — বাংলা) dictionaries, navigation key parity, translation coverage, and medical terminology preservation.
+  - tests/medicationValidation.test.mjs (3 tests): Self-reported medication validation, pharmacist question prompt templates, and non-diagnostic disclaimers.
+  - tests/privacyInspector.test.mjs (6 tests): Detection of email, phone, SSN / MRN, DOB, clean text verification, and multi-identifier redaction.
+  - tests/safetySignals.test.mjs (7 tests): Emergency phrase catalog validation, acute cardiac indicators, stroke warning signs, case-insensitivity, non-emergency baseline, and non-reassurance safety invariant.
+  - tests/visitSummary.test.mjs (4 tests): 1-page structured printable clinician summary, strict non-diagnostic boundary enforcement, caregiver attribution handling, and graceful empty field handling.
+- **ESLint:** 0 errors, 0 warnings.
+- **Production Build:** All 17 static and dynamic routes compiled successfully in Next.js 16.4.2 Turbopack with zero warnings or type errors.
+
+---
+
+## ⚙️ Environment Configuration
+
+MediSupport AI works **out-of-the-box with zero configuration**. If no API keys are provided, it operates seamlessly in 100% deterministic, private, non-diagnostic local mode with zero external network dependencies.
+
+To optionally connect external AI providers, copy .env.example to .env.local:
+
+```bash
+cp .env.example .env.local
+```
+
+| Variable | Description | Default |
+| :--- | :--- | :--- |
+| GEMINI_API_KEY | *(Optional)* Google Gemini API key for cloud-assisted completions. | None (Deterministic Fallback) |
+| OPENAI_API_KEY | *(Optional)* OpenAI API key for cloud-assisted completions. | None (Deterministic Fallback) |
 
 ---
 
