@@ -143,12 +143,17 @@ export function AssistantChatTab({
       return;
     }
 
-    // Online Mode: Send to Next.js API
+    // Online Mode: Send to Next.js API (which connects to Python FastAPI or AI Provider)
     try {
+      const historyPayload = messages
+        .filter((m) => m.role === "user" || m.role === "assistant")
+        .slice(-6)
+        .map((m) => ({ role: m.role, content: m.content }));
+
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text, mode: "chat" }),
+        body: JSON.stringify({ message: text, mode: "chat", history: historyPayload }),
       });
 
       if (!response.ok) {

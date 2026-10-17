@@ -120,18 +120,18 @@ Aroviax is built using a clean, enterprise-grade multi-tier architecture:
 
 ---
 
-## 🧪 Comprehensive Automated Testing (83 Tests)
+## 🧪 Comprehensive Automated Testing (90 Tests)
 
-The project includes **83 automated unit and integration tests** verifying safety invariants, privacy inspection, visit summary generation, backend services, multilingual i18n, AI provider integration, and Python FastAPI endpoints:
+The project includes **90 automated unit and integration tests** verifying safety invariants, privacy inspection, visit summary generation, backend services, multilingual i18n, AI provider integration, and Python FastAPI endpoints:
 
 ```bash
-# Run all tests across the entire project (83 tests)
+# Run all tests across the entire project (90 tests)
 npm run test:all
 
 # Run Node.js / TypeScript test suite (42 tests)
 npm test
 
-# Run Python FastAPI backend & validation tools test suite (41 tests)
+# Run Python FastAPI backend & validation tools test suite (48 tests)
 npm run test:python
 
 # Run ESLint validation (0 errors, 0 warnings)
@@ -152,13 +152,13 @@ npm run build
   - `tests/privacyInspector.test.mjs` (6 tests): Detection of email, phone, SSN / MRN, DOB, clean text verification, and multi-identifier redaction.
   - `tests/safetySignals.test.mjs` (7 tests): Emergency phrase catalog validation, acute cardiac indicators, stroke warning signs, case-insensitivity, non-emergency baseline, and non-reassurance safety invariant.
   - `tests/visitSummary.test.mjs` (4 tests): 1-page structured printable clinician summary, strict non-diagnostic boundary enforcement, caregiver attribution handling, and graceful empty field handling.
-- **Python Test Suites:** 41 passing across backend and validation tools (100% pass rate)
-  - `backend/tests/test_health.py` (3 tests): Health check, uptime calculation, root metadata, and governance disclaimers.
+- **Python Test Suites:** 48 passing across backend and validation tools (100% pass rate)
+  - `backend/tests/test_health.py` (4 tests): Core `/api/health`, `/health`, `/api/v1/health`, secret non-exposure verification, and governance disclaimers.
+  - `backend/tests/test_chat.py` (9 tests): `POST /api/chat` validation, conversation history handling, empty/whitespace rejection, invalid role rejection, message length limits, emergency interception, mocked live AI provider parsing, provider timeout fallback, and term translation.
   - `backend/tests/test_emergency_detector.py` (5 tests): Acute cardiac, neurological (FAST), respiratory distress indicators, and clean input pass-through.
   - `backend/tests/test_triage.py` (2 tests): Urgency tiering (emergency vs routine), specialty routing, and clinician question formulations.
   - `backend/tests/test_terms.py` (3 tests): Plain-language medical terms translation and bilingual Bangla dictionary verification.
   - `backend/tests/test_medications.py` (2 tests): Multi-NSAID detection, blood thinner interaction cautions, and pharmacist prompt generation.
-  - `backend/tests/test_chat.py` (3 tests): Conversational clinical support with automated emergency pre-emption.
   - `tools/test_validate_health_data.py` (23 tests): ISO date validation, PII redaction scanner, health notes, medications, and full JSON health dossier validation.
 - **ESLint:** 0 errors, 0 warnings.
 - **Production Build:** All 17 static and dynamic Next.js routes compiled successfully in Turbopack with zero warnings or type errors.
@@ -197,12 +197,22 @@ npm run dev
 
 ### 2. Python FastAPI Backend Service (Optional / Complementary)
 ```bash
+# Create virtual environment
+python -m venv .venv
+
+# Activate virtual environment
+# Windows (PowerShell):
+.venv\Scripts\Activate.ps1
+# macOS / Linux:
+source .venv/bin/activate
+
 # Install Python dependencies
 pip install -r backend/requirements.txt
 
-# Start FastAPI backend
-python backend/run.py
-# API docs at http://localhost:8000/docs
+# Run FastAPI backend using uvicorn
+uvicorn app.main:app --app-dir backend --reload --host 127.0.0.1 --port 8000
+# Alternatively: python backend/run.py
+# API documentation available at http://127.0.0.1:8000/docs
 ```
 
 ### 3. Database Setup (PostgreSQL)

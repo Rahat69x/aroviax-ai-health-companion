@@ -23,7 +23,9 @@ export async function POST(request: Request) {
       );
     }
 
-    const response = await generateAiChatResponse(trimmed, mode);
+    const history = Array.isArray(body?.history) ? body.history : [];
+
+    const response = await generateAiChatResponse(trimmed, mode, history);
     return NextResponse.json(response);
   } catch (error) {
     console.error("Chat API route error:", error);

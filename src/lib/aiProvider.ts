@@ -210,7 +210,8 @@ export function generateDeterministicResponse(
  */
 export async function generateAiChatResponse(
   message: string,
-  mode: ChatMode = "chat"
+  mode: ChatMode = "chat",
+  history: Array<{ role: string; content: string }> = []
 ): Promise<ChatResponse> {
   const trimmed = message.trim();
   const lower = trimmed.toLowerCase();
@@ -227,11 +228,11 @@ export async function generateAiChatResponse(
   if (pythonBackendUrl) {
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 3000);
-      const res = await fetch(`${pythonBackendUrl.replace(/\/$/, "")}/api/v1/chat`, {
+      const timeoutId = setTimeout(() => controller.abort(), 4000);
+      const res = await fetch(`${pythonBackendUrl.replace(/\/$/, "")}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: trimmed, mode }),
+        body: JSON.stringify({ message: trimmed, mode, history }),
         signal: controller.signal,
       });
       clearTimeout(timeoutId);

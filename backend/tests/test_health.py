@@ -29,6 +29,20 @@ class TestHealthEndpoints(unittest.TestCase):
         self.assertTrue(data["emergency_interceptor_active"])
         self.assertIn("disclaimer", data)
 
+    def test_api_health_core_endpoint(self):
+        response = self.client.get("/api/health")
+        self.assertEqual(response.status_code, 200)
+        data = response.json()
+        self.assertEqual(data["status"], "ok")
+        self.assertEqual(data["service"], "aroviax-api")
+        self.assertIn("version", data)
+        self.assertIn("disclaimer", data)
+        # Ensure no secrets or API keys are leaked
+        self.assertNotIn("ai_api_key", data)
+        self.assertNotIn("openai_api_key", data)
+        self.assertNotIn("api_key", data)
+        self.assertNotIn("secret", data)
+
     def test_api_v1_health_endpoint(self):
         response = self.client.get("/api/v1/health")
         self.assertEqual(response.status_code, 200)

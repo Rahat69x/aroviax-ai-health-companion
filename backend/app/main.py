@@ -13,6 +13,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from backend.app.config import settings
+from backend.app.api import routes
 from backend.app.routers import health, triage, terms, medications, chat
 
 app = FastAPI(
@@ -36,7 +37,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Register routers
+# Register core API routes (/api/health, /api/chat)
+app.include_router(routes.router)
+
+# Register specialized routers (/api/v1/...)
 app.include_router(health.router)
 app.include_router(triage.router)
 app.include_router(terms.router)
