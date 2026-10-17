@@ -1,0 +1,49 @@
+# Aroviax — Docker Ignore
+# Exclude files that should not be included in the Docker build context.
+
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Dependencies (installed inside the container)
+node_modules
+
+# Build output (rebuilt inside the container)
+.next
+out
+build
+
+# Environment files (injected at runtime, not baked into image)
+.env
+.env.*
+!.env.example
+
+# Editor and IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Documentation and planning (not needed at runtime)
+docs/
+adapters/
+.agent/
+.agents/
+.gemini/
+.gsd/
+*.md
+!README.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Testing (not needed in production image)
+tests/
+tools/
+coverage/
+
+# Unrelated directories
+next-commerce-main/
+scripts/

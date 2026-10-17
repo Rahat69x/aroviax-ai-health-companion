@@ -222,6 +222,43 @@ export async function generateAiChatResponse(
 
   const config = getAiProviderConfig();
 
+  // If Python FastAPI backend is configured, attempt backend request
+  const pythonBackendUrl = process.env.PYTHON_BACKEND_URL;
+  if (pythonBackendUrl) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 3000);
+      const res = await fetch(`${pythonBackendUrl.replace(/\/$/, "")}/api/v1/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: trimmed, mode }),
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
+      if (res.ok) {
+        const pyData = await res.json();
+        return {
+          requestId: pyData.request_id || `py_${Date.now()}`,
+          timestamp: pyData.timestamp || new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+          mode: (pyData.mode as ChatMode) || mode,
+          isEmergencyAlert: Boolean(pyData.is_emergency_alert),
+          provider: "fastapi-backend",
+          modelUsed: pyData.model_used || "aroviax-python-engine",
+          reply: pyData.reply,
+          generalInformation: pyData.general_information,
+          whatImUnsureAbout: pyData.what_im_unsure_about,
+          whenToSeekCare: pyData.when_to_seek_care,
+          suggestedDoctorQuestions: pyData.suggested_doctor_questions || [],
+          organizedItems: pyData.organized_items || [],
+          safetyNotice: pyData.safety_notice || "Informational Support Only: Aroviax is not a doctor.",
+          confidenceNote: pyData.confidence_note || "Processed via Python FastAPI backend.",
+        };
+      }
+    } catch {
+      // Fall through on network timeout or offline backend
+    }
+  }
+
   // If OpenAI key is present, attempt live completion with timeout
   if (config.hasOpenAiKey && process.env.OPENAI_API_KEY) {
     try {

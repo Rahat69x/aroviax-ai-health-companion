@@ -24,6 +24,15 @@
 .DS_Store
 *.pem
 
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+env/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
@@ -49,7 +58,6 @@ next-env.d.ts
 /.gemini/
 /.gsd/
 /adapters/
-/scripts/
 GSD-STYLE.md
 PROJECT_RULES.md
 VERSION

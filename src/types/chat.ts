@@ -13,7 +13,7 @@ export interface ChatMessage {
   generalInformation?: string;
   whatImUnsureAbout?: string;
   whenToSeekCare?: string;
-  provider?: "live-ai" | "deterministic-fallback";
+  provider?: "live-ai" | "deterministic-fallback" | "fastapi-backend";
   modelUsed?: string;
 }
 
@@ -36,6 +36,6 @@ export interface ChatResponse {
   confidenceNote?: string;
   requestId: string;
   timestamp: string;
-  provider?: "live-ai" | "deterministic-fallback";
+  provider?: "live-ai" | "deterministic-fallback" | "fastapi-backend";
   modelUsed?: string;
 }

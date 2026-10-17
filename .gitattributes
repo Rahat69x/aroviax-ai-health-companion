@@ -1,0 +1,69 @@
+# ==========================================================================
+# Aroviax — .gitattributes
+# Controls GitHub Linguist language detection and line-ending normalization.
+# See: https://github.com/github-linguist/linguist/blob/main/docs/overrides.md
+# ==========================================================================
+
+# --------------------------------------------------------------------------
+# Line ending normalization
+# --------------------------------------------------------------------------
+* text=auto eol=lf
+
+# Windows scripts keep CRLF
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files
+*.ico binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+
+# --------------------------------------------------------------------------
+# Linguist: Exclude generated / vendored / non-source files
+# --------------------------------------------------------------------------
+
+# Lock files are auto-generated
+package-lock.json   linguist-generated=true
+
+# TypeScript build info is generated
+tsconfig.tsbuildinfo linguist-generated=true
+
+# Next.js generated type declaration
+next-env.d.ts       linguist-generated=true
+
+# SVG assets in public/ are vendored icons, not source code
+public/*.svg        linguist-vendored=true
+
+# --------------------------------------------------------------------------
+# Linguist: Ensure real source files are detected correctly
+# --------------------------------------------------------------------------
+
+# Dockerfile is its own language in Linguist
+Dockerfile          linguist-language=Dockerfile
+
+# Shell scripts
+*.sh                linguist-language=Shell
+
+# PowerShell scripts
+*.ps1               linguist-language=PowerShell
+
+# SQL schema and seed files
+*.sql               linguist-language=SQL
+
+# Python backend and tools
+*.py                linguist-language=Python
+
+# Standalone HTML templates
+*.html              linguist-language=HTML
+
+# Test files (.mjs) should count as JavaScript
+tests/*.mjs         linguist-language=JavaScript
+
+# CSS
+*.css               linguist-language=CSS

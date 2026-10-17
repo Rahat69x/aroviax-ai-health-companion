@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aroviax — Offline Clinical Visit Summary Template</title>
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #059669;
+      --navy: #0f172a;
+      --slate: #475569;
+      --light-bg: #f8fafc;
+      --border: #e2e8f0;
+      --danger: #ef4444;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.5;
+      color: var(--navy);
+      background-color: var(--light-bg);
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .brand h1 {
+      font-size: 1.75rem;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .brand h1 span {
+      color: var(--primary);
+    }
+    .brand p {
+      font-size: 0.875rem;
+      color: var(--slate);
+    }
+    .actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+    button {
+      background-color: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    button:hover {
+      background-color: var(--primary-dark);
+    }
+    button.secondary {
+      background-color: transparent;
+      color: var(--slate);
+      border: 1px solid var(--border);
+    }
+    button.secondary:hover {
+      background-color: var(--light-bg);
+    }
+    .disclaimer-banner {
+      background-color: #fef2f2;
+      border-left: 4px solid var(--danger);
+      padding: 0.875rem 1rem;
+      border-radius: 4px;
+      font-size: 0.8125rem;
+      color: #991b1b;
+      margin-bottom: 2rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section h2 {
+      font-size: 1.125rem;
+      color: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .field label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--slate);
+      margin-bottom: 0.25rem;
+    }
+    .field input, .field textarea {
+      width: 100%;
+      padding: 0.625rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.9375rem;
+      font-family: inherit;
+    }
+    .field textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 0.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.625rem;
+      text-align: left;
+    }
+    th {
+      background-color: var(--light-bg);
+      font-weight: 600;
+    }
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--slate);
+      text-align: center;
+    }
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .actions {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <h1>Aroviax <span>•</span> Visit Prep Kit</h1>
+        <p>Offline Clinical Visit Summary & Discussion Dossier</p>
+      </div>
+      <div class="actions">
+        <button onclick="window.print()">Print / Save as PDF</button>
+        <button class="secondary" onclick="document.getElementById('healthForm').reset()">Reset</button>
+      </div>
+    </header>
+
+    <div class="disclaimer-banner">
+      <strong>Clinical Notice:</strong> Aroviax is an informational health communication companion, not a licensed medical professional. This summary is intended to facilitate patient-physician dialogue and does not constitute a clinical diagnosis or treatment prescription.
+    </div>
+
+    <form id="healthForm">
+      <div class="meta-grid">
+        <div class="field">
+          <label for="patientName">Patient Name</label>
+          <input type="text" id="patientName" placeholder="Full Name">
+        </div>
+        <div class="field">
+          <label for="visitDate">Appointment Date</label>
+          <input type="date" id="visitDate">
+        </div>
+        <div class="field">
+          <label for="clinician">Doctor / Clinic</label>
+          <input type="text" id="clinician" placeholder="Dr. Name / Specialty">
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>1. Primary Health Concern & Symptom Timeline</h2>
+        <div class="field" style="margin-bottom: 1rem;">
+          <label for="chiefComplaint">Chief Concern</label>
+          <input type="text" id="chiefComplaint" placeholder="e.g. Recurrent morning headaches for 3 weeks">
+        </div>
+        <div class="field" style="margin-bottom: 1rem;">
+          <label for="symptomDetails">Onset, Location, Severity (1–10), and Aggravating Factors</label>
+          <textarea id="symptomDetails" placeholder="Describe when it began, severity rating, what makes it better or worse..."></textarea>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>2. Current Medications & Supplements</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Medication / Supplement</th>
+                <th>Dosage & Frequency</th>
+                <th>Prescribed Purpose</th>
+                <th>Questions for Pharmacist</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="text" style="width:100%; border:none;" placeholder="e.g. Metformin 500mg"></td>
+                <td><input type="text" style="width:100%; border:none;" placeholder="Twice daily with meals"></td>
+                <td><input type="text" style="width:100%; border:none;" placeholder="Blood sugar"></td>
+                <td><input type="text" style="width:100%; border:none;" placeholder="Timing with meals?"></td>
+              </tr>
+              <tr>
+                <td><input type="text" style="width:100%; border:none;" placeholder="e.g. Vitamin D3 1000 IU"></td>
+                <td><input type="text" style="width:100%; border:none;" placeholder="Once daily morning"></td>
+                <td><input type="text" style="width:100%; border:none;" placeholder="Bone health"></td>
+                <td><input type="text" style="width:100%; border:none;" placeholder="Safe with others?"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>3. Priority Questions for My Doctor</h2>
+        <div class="field">
+          <textarea id="doctorQuestions" placeholder="1. What is the most likely cause of my chief concern?&#10;2. Are specific diagnostic blood tests or imaging indicated?&#10;3. What red flags should prompt me to seek urgent care?"></textarea>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>4. Post-Visit Action Plan & Follow-up Notes (For Clinic Use)</h2>
+        <div class="field">
+          <textarea id="clinicNotes" placeholder="Doctor recommendations, follow-up timeframe, lab schedule..."></textarea>
+        </div>
+      </div>
+    </form>
+
+    <footer class="footer">
+      <p>Aroviax — AI Health Companion • Offline Patient Communication Tool</p>
+      <p>All data entered remains strictly local on this device.</p>
+    </footer>
+  </div>
+</body>
+</html>
