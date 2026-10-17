@@ -112,7 +112,7 @@ export function AfterVisitNotes() {
         />
         <div className="flex items-center justify-between">
           <span className="text-[11px] text-slate-400">
-            Strict rule: MediSupport AI restates user-reported notes and never invents clinical dosages.
+            Strict rule: Aroviax restates user-reported notes and never invents clinical dosages.
           </span>
           <button
             type="button"

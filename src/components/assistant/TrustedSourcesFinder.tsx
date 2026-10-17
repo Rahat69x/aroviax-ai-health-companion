@@ -39,7 +39,7 @@ export function TrustedSourcesFinder() {
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3">
         <AlertCircle className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
         <p className="text-sm text-amber-900">
-          <strong>Source transparency:</strong> These are links to publicly available health education websites. MediSupport AI does not control their content. This is not a search engine — it is a curated, static directory of verified organizations. Always review findings with your healthcare provider.
+          <strong>Source transparency:</strong> These are links to publicly available health education websites. Aroviax does not control their content. This is not a search engine — it is a curated, static directory of verified organizations. Always review findings with your healthcare provider.
         </p>
       </div>
 
@@ -126,7 +126,7 @@ export function TrustedSourcesFinder() {
       </div>
 
       <p className="text-xs text-[#64748B] text-center">
-        MediSupport AI does not control or verify the real-time content of external websites. Links verified as of the dates shown above.
+        Aroviax does not control or verify the real-time content of external websites. Links verified as of the dates shown above.
       </p>
     </div>
   );

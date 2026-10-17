@@ -1,6 +1,6 @@
-# MediSupport AI — Implementation Audit Report
+# Aroviax — Implementation Audit Report
 
-This audit documents the implementation status of all requirements across the MediSupport AI healthcare-support project. Every requirement has been verified against the actual source code, unit test suite, and production build output.
+This audit documents the implementation status of all requirements across the Aroviax project. Every requirement has been verified against the actual source code, unit test suite, and production build output.
 
 ## Status Legend
 - **COMPLETE** — Implementation fully verified by code inspection and automated test coverage.

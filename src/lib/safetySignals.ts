@@ -1,6 +1,6 @@
 /**
  * @file safetySignals.ts
- * @description Deterministic rule-based emergency signal detector for MediSupport AI.
+ * @description Deterministic rule-based emergency signal detector for Aroviax.
  *
  * CLINICAL GOVERNANCE NOTICE:
  * This module is a conservative, rule-based software heuristic designed for hackathon demonstration.

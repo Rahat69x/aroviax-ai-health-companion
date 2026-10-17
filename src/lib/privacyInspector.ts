@@ -109,11 +109,16 @@ export function redactIdentifiers(text: string): string {
 export function clearAllLocalData(): void {
   if (typeof window !== "undefined") {
     try {
-      localStorage.removeItem("medisupport_accessibility_prefs");
-      localStorage.removeItem("medisupport_journal_entries");
-      localStorage.removeItem("medisupport_prepkit_draft");
-      localStorage.removeItem("medisupport_medications");
-      localStorage.removeItem("medisupport_health_notes");
+      localStorage.removeItem("aroviax_accessibility_prefs");
+    localStorage.removeItem("medisupport_accessibility_prefs");
+      localStorage.removeItem("aroviax_journal_entries");
+    localStorage.removeItem("medisupport_journal_entries");
+      localStorage.removeItem("aroviax_prepkit_draft");
+    localStorage.removeItem("medisupport_prepkit_draft");
+      localStorage.removeItem("aroviax_medications");
+    localStorage.removeItem("medisupport_medications");
+      localStorage.removeItem("aroviax_health_notes");
+    localStorage.removeItem("medisupport_health_notes");
       sessionStorage.clear();
     } catch (e) {
       console.warn("Could not clear local storage:", e);

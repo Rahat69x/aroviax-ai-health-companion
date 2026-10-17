@@ -22,7 +22,7 @@ export function AssistantPreview() {
             </div>
             <div>
               <span className="text-xs font-bold text-[#172554] block leading-tight">
-                MediSupport Assistant
+                Aroviax — AI Health Companion
               </span>
               <span className="text-[10px] text-[#0D817C] flex items-center gap-1 font-medium">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0D817C]" />

@@ -29,7 +29,7 @@ export function generateFormattedVisitText(data: VisitPrepData): string {
 
   parts.push("====================================================");
   parts.push("         PATIENT VISIT APPOINTMENT SUMMARY          ");
-  parts.push(" Prepared with MediSupport AI (Non-Clinical Helper) ");
+  parts.push(" Prepared with Aroviax — AI Health Companion (Non-Clinical Helper) ");
   parts.push("====================================================");
   parts.push("");
   parts.push("NOTICE FOR CLINICIAN: This summary was created by the patient/caregiver to organize their thoughts. All entries are self-reported. No automated diagnosis or clinical scoring has been applied.");

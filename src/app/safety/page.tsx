@@ -11,8 +11,8 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Safety Framework & Clinical Boundaries | MediSupport AI",
-  description: "Comprehensive safety standards, clinical boundaries, and emergency protocols for MediSupport AI.",
+  title: "Safety Framework & Clinical Boundaries | Aroviax — AI Health Companion",
+  description: "Comprehensive safety standards, clinical boundaries, and emergency protocols for Aroviax.",
 };
 
 export default function SafetyPage() {
@@ -58,7 +58,7 @@ export default function SafetyPage() {
             AI support can help you prepare. Medical professionals provide care.
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
-            MediSupport AI is an educational technology prototype. It is engineered to clarify health
+            Aroviax is an educational technology prototype. It is engineered to clarify health
             terminology and structure questions—never to replace licensed medical care.
           </p>
         </div>
@@ -159,7 +159,7 @@ export default function SafetyPage() {
               <div className="p-6 bg-slate-50/50 space-y-3">
                 <span className="font-bold text-teal-800 flex items-center gap-2 text-sm">
                   <CheckCircle2 className="w-4 h-4 text-teal-700" />
-                  What MediSupport AI Does
+                  What Aroviax Does
                 </span>
                 <ul className="space-y-2 text-xs sm:text-sm text-slate-600">
                   <li>&bull; Clarifies medical concepts across 3 reading levels.</li>
@@ -172,7 +172,7 @@ export default function SafetyPage() {
               <div className="p-6 bg-slate-50/20 space-y-3">
                 <span className="font-bold text-red-800 flex items-center gap-2 text-sm">
                   <XCircle className="w-4 h-4 text-red-600" />
-                  What MediSupport AI Never Does
+                  What Aroviax Never Does
                 </span>
                 <ul className="space-y-2 text-xs sm:text-sm text-slate-600">
                   <li>&bull; Never calculates disease likelihoods or risk scores.</li>
@@ -207,7 +207,7 @@ export default function SafetyPage() {
 
       {/* Footer */}
       <footer className="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500 mt-16">
-        <p>&copy; 2026 MediSupport AI Project. Hackathon Demonstration Prototype.</p>
+        <p>&copy; 2026 Aroviax Project. Hackathon Demonstration Prototype.</p>
       </footer>
     </div>
   );

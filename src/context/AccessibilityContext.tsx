@@ -30,7 +30,7 @@ interface AccessibilityState {
 
 const AccessibilityContext = createContext<AccessibilityState | undefined>(undefined);
 
-const PREFS_STORAGE_KEY = "medisupport_accessibility_prefs";
+const PREFS_STORAGE_KEY = "aroviax_accessibility_prefs";
 
 interface StoredPrefs {
   optInPersistence?: boolean;

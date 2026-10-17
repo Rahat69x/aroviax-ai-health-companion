@@ -186,7 +186,7 @@ export function DisplayControlsModal({ isOpen, onClose }: DisplayControlsModalPr
                   type="button"
                   onClick={() => {
                     if (isSpeaking) stopSpeaking();
-                    else speakText("MediSupport AI is an educational assistant designed to help you prepare questions for your doctor.");
+                    else speakText("Aroviax is an educational AI Health Companion designed to help you prepare questions for your doctor.");
                   }}
                   className="px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-[#0D817C] hover:bg-[#086B67] transition-colors shrink-0"
                 >

@@ -26,7 +26,7 @@ export function Footer({
                 <Stethoscope className="w-5 h-5" aria-hidden="true" />
               </div>
               <span className="font-bold text-xl text-white tracking-tight">
-                MediSupport<span className="text-[#0D817C]"> AI</span>
+                Aroviax<span className="text-[#0D817C]"></span>
               </span>
             </div>
 
@@ -164,7 +164,7 @@ export function Footer({
             <span>Important Medical and Legal Disclaimer:</span>
           </div>
           <p>
-            MediSupport AI is an educational concept developed for an AI healthcare hackathon. It is
+            Aroviax is an educational concept developed for an AI healthcare hackathon. It is
             not a diagnostic medical device, does not formulate clinical diagnoses, does not prescribe
             medications, and does not replace the relationship between a patient and their physician.
             Always seek the advice of your physician or other qualified health provider with any
@@ -173,7 +173,7 @@ export function Footer({
             application.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 text-slate-400">
-            <span>&copy; {currentYear} MediSupport AI Project. Open-source hackathon demonstrator.</span>
+            <span>&copy; {currentYear} Aroviax — AI Health Companion. Open-source hackathon demonstrator.</span>
             <div className="flex items-center gap-1.5 text-slate-300">
               <HeartHandshake className="w-3.5 h-3.5 text-[#0D817C]" />
               <span>Patient empowerment through clarity & communication</span>

@@ -60,7 +60,7 @@ export function WhatItDoesSection() {
             Health information, made easier to navigate.
           </h2>
           <p className="text-base sm:text-lg text-[#334155] leading-relaxed">
-            Rather than jumping to alarming internet conclusions, MediSupport AI provides calm,
+            Rather than jumping to alarming internet conclusions, Aroviax provides calm,
             structured guidance to help you prepare before seeing your doctor.
           </p>
         </div>
@@ -109,7 +109,7 @@ export function WhatItDoesSection() {
           <div className="flex items-center gap-2.5">
             <ShieldCheck className="w-4 h-4 text-[#0D817C] shrink-0" />
             <span>
-              <strong>Scope Notice:</strong> MediSupport AI does not provide clinical diagnosis,
+              <strong>Scope Notice:</strong> Aroviax does not provide clinical diagnosis,
               formal triage, or medical treatment plans.
             </span>
           </div>

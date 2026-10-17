@@ -23,7 +23,7 @@ export function HeroSection() {
             {/* Context Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#E8F6F4] text-[#0D817C] border border-[#0D817C]/20 mb-6">
               <span className="w-2 h-2 rounded-full bg-[#0D817C] animate-pulse" />
-              <span>AI-Assisted Health Literacy & Appointment Preparation</span>
+              <span>Aroviax — AI Health Companion</span>
             </div>
 
             {/* Main Headline */}

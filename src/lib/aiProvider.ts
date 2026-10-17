@@ -125,7 +125,7 @@ export function generateDeterministicResponse(
       modelUsed: "deterministic-aftervisit-v1",
       reply: "Here is a structured organization of what you reported from your clinical visit:",
       generalInformation: "What was discussed: You noted points from your doctor regarding your care plan.",
-      whatImUnsureAbout: "What remains unverified: MediSupport AI does not invent or assume medication dosages or clinical orders that you did not explicitly write.",
+      whatImUnsureAbout: "What remains unverified: Aroviax does not invent or assume medication dosages or clinical orders that you did not explicitly write.",
       whenToSeekCare: "Contact your doctor's office immediately if symptoms worsen or if new warning signs emerge that your clinician instructed you to call about.",
       organizedItems: [
         "Reported instructions: Restated verbatim from your notes (no medical additions made)",
@@ -199,7 +199,7 @@ export function generateDeterministicResponse(
     whenToSeekCare: whenToSeek,
     suggestedDoctorQuestions: questions,
     organizedItems,
-    safetyNotice: "Informational Support Only: MediSupport AI is not a doctor. Consult a licensed clinician for medical decisions.",
+    safetyNotice: "Informational Support Only: Aroviax is not a doctor. Consult a licensed clinician for medical decisions.",
     confidenceNote: "Structured via deterministic health-communication heuristic (No live LLM key configured).",
   };
 }
@@ -228,7 +228,7 @@ export async function generateAiChatResponse(
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 8000); // 8-second safety timeout
 
-      const systemPrompt = `You are MediSupport AI, a compassionate healthcare communication assistant.
+      const systemPrompt = `You are Aroviax — AI Health Companion, a compassionate healthcare communication assistant.
 CLINICAL GOVERNANCE INVARIANTS:
 1. YOU MUST NEVER DIAGNOSE or calculate diagnostic probabilities.
 2. YOU MUST NEVER PRESCRIBE or recommend dosage adjustments.
@@ -278,7 +278,7 @@ CLINICAL GOVERNANCE INVARIANTS:
             whenToSeekCare: parsed.whenToSeekCare || "Consult a licensed healthcare provider for personal medical advice.",
             suggestedDoctorQuestions: Array.isArray(parsed.suggestedDoctorQuestions) ? parsed.suggestedDoctorQuestions : [],
             organizedItems: Array.isArray(parsed.organizedItems) ? parsed.organizedItems : [],
-            safetyNotice: "Informational Support Only: MediSupport AI is not a doctor. Consult a licensed clinician for medical decisions.",
+            safetyNotice: "Informational Support Only: Aroviax is not a doctor. Consult a licensed clinician for medical decisions.",
             confidenceNote: parsed.confidenceNote || "Generated with live clinical communication guidance.",
           };
         }

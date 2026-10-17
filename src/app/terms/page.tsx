@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowLeft, FileText } from "lucide-react";
 
 export const metadata = {
-  title: "Terms of Use | MediSupport AI",
-  description: "Terms and conditions governing the educational and demonstrative use of MediSupport AI.",
+  title: "Terms of Use | Aroviax — AI Health Companion",
+  description: "Terms and conditions governing the educational and demonstrative use of Aroviax.",
 };
 
 export default function TermsPage() {
@@ -40,7 +40,7 @@ export default function TermsPage() {
             Terms of Use
           </h1>
           <p className="text-base text-slate-600">
-            Please read these terms before exploring the MediSupport AI hackathon demonstration.
+            Please read these terms before exploring the Aroviax demonstration.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export default function TermsPage() {
             1. Educational Prototype Only
           </h2>
           <p>
-            MediSupport AI is an educational technology prototype. It is provided &ldquo;as is&rdquo; without warranties of clinical accuracy, reliability, or diagnostic completeness.
+            Aroviax is an educational technology prototype. It is provided &ldquo;as is&rdquo; without warranties of clinical accuracy, reliability, or diagnostic completeness.
           </p>
           <p>
             The software does not provide medical advice, diagnosis, triage, or treatment plans, and using it does not create a physician-patient relationship.
@@ -77,7 +77,7 @@ export default function TermsPage() {
 
       {/* Footer */}
       <footer className="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500 mt-16">
-        <p>&copy; 2026 MediSupport AI Project. Open Hackathon Demonstration Terms.</p>
+        <p>&copy; 2026 Aroviax Project. Open Hackathon Demonstration Terms.</p>
       </footer>
     </div>
   );

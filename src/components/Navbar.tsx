@@ -85,7 +85,7 @@ export function Navbar({ onOpenSafetyModal }: NavbarProps) {
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-xl tracking-tight text-[#172554]">
-                    MediSupport<span className="text-[#0D817C]"> AI</span>
+                    Aroviax<span className="text-[#0D817C]"></span>
                   </span>
                   <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#E8F6F4] text-[#0D817C] border border-[#0D817C]/20">
                     <Sparkles className="w-3 h-3 text-[#0D817C]" />

@@ -14,7 +14,7 @@ export interface HealthNote {
   updatedAt: string;
 }
 
-const STORAGE_KEY = "medisupport_health_notes";
+const STORAGE_KEY = "aroviax_health_notes";
 
 export function loadHealthNotes(): HealthNote[] {
   if (typeof window === "undefined") return [];

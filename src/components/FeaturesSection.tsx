@@ -105,7 +105,7 @@ export function FeaturesSection() {
 
         {/* Responsible Engineering Statement */}
         <div className="mt-12 text-center text-xs text-[#64748B] max-w-2xl mx-auto">
-          Features carry honest status badges. MediSupport AI avoids simulated patient databases,
+          Features carry honest status badges. Aroviax avoids simulated patient databases,
           unvalidated diagnostic algorithms, or exaggerated outcome promises.
         </div>
       </div>

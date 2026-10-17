@@ -53,7 +53,7 @@ export const DEFAULT_ORGANIZER_DATA: SymptomOrganizerData = {
 export function generateSymptomSummaryText(data: SymptomOrganizerData): string {
   const lines: string[] = [];
   lines.push("=== SYMPTOM ORGANIZER SUMMARY ===");
-  lines.push("Prepared with MediSupport AI (Non-Diagnostic Tool)");
+  lines.push("Prepared with Aroviax — AI Health Companion (Non-Diagnostic Tool)");
   lines.push("All information is self-reported by the patient.");
   lines.push("");
   lines.push(`Main Concern: ${data.mainConcern || "Not specified"}`);

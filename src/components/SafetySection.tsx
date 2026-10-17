@@ -37,7 +37,7 @@ export function SafetySection({ onOpenSafetyModal }: SafetySectionProps) {
             AI support can help you prepare. Medical professionals provide care.
           </h2>
           <p className="text-base sm:text-lg text-[#334155] leading-relaxed">
-            Understanding health information requires clear boundaries. MediSupport AI is strictly
+            Understanding health information requires clear boundaries. Aroviax is strictly
             engineered to augment your preparation, never to displace clinical judgment.
           </p>
         </div>
@@ -90,12 +90,12 @@ export function SafetySection({ onOpenSafetyModal }: SafetySectionProps) {
         {/* What We Do vs What We Never Do Comparison Grid */}
         <div className="max-w-4xl mx-auto rounded-2xl border border-[#E2E8F0] overflow-hidden bg-white shadow-xs mb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#E2E8F0]">
-            {/* What MediSupport AI Does */}
+            {/* What Aroviax Does */}
             <div className="p-6 sm:p-8 bg-[#F8FAFC]/60">
               <div className="flex items-center gap-2 mb-4">
                 <CheckCircle2 className="w-5 h-5 text-[#0D817C]" />
                 <h4 className="font-bold text-[#172554] text-base">
-                  What MediSupport AI Does
+                  What Aroviax Does
                 </h4>
               </div>
               <ul className="space-y-3 text-xs sm:text-sm text-[#334155]">
@@ -118,12 +118,12 @@ export function SafetySection({ onOpenSafetyModal }: SafetySectionProps) {
               </ul>
             </div>
 
-            {/* What MediSupport AI Never Does */}
+            {/* What Aroviax Never Does */}
             <div className="p-6 sm:p-8 bg-[#F8FAFC]/30">
               <div className="flex items-center gap-2 mb-4">
                 <XCircle className="w-5 h-5 text-[#B91C1C]" />
                 <h4 className="font-bold text-[#172554] text-base">
-                  What MediSupport AI Never Does
+                  What Aroviax Never Does
                 </h4>
               </div>
               <ul className="space-y-3 text-xs sm:text-sm text-[#334155]">

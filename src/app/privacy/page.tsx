@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowLeft, Lock } from "lucide-react";
 
 export const metadata = {
-  title: "Privacy & Data Stewardship Principles | MediSupport AI",
-  description: "Learn how MediSupport AI handles sensitive health information with data minimization and client-side protection.",
+  title: "Privacy & Data Stewardship Principles | Aroviax — AI Health Companion",
+  description: "Learn how Aroviax handles sensitive health information with data minimization and client-side protection.",
 };
 
 export default function PrivacyPage() {
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
             How We Protect Your Health Queries
           </h1>
           <p className="text-base text-slate-600">
-            MediSupport AI practices strict data minimization. Here is an honest, unvarnished disclosure of our data practices.
+            Aroviax practices strict data minimization. Here is an honest, unvarnished disclosure of our data practices.
           </p>
         </div>
 
@@ -85,14 +85,14 @@ export default function PrivacyPage() {
             4. Honest Compliance Notice
           </h2>
           <p className="text-amber-900 bg-amber-50 p-4 rounded-xl border border-amber-200 text-xs">
-            <strong>Important Regulatory Notice:</strong> MediSupport AI is an educational concept built for a technology hackathon. We have NOT conducted formal HIPAA, HITECH, or GDPR compliance audits. Therefore, users must never submit real Protected Health Information (PHI), medical records, or sensitive identities.
+            <strong>Important Regulatory Notice:</strong> Aroviax is an educational concept built for a technology hackathon. We have NOT conducted formal HIPAA, HITECH, or GDPR compliance audits. Therefore, users must never submit real Protected Health Information (PHI), medical records, or sensitive identities.
           </p>
         </section>
       </main>
 
       {/* Footer */}
       <footer className="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500 mt-16">
-        <p>&copy; 2026 MediSupport AI Project. Transparent Privacy Engineering.</p>
+        <p>&copy; 2026 Aroviax Project. Transparent Privacy Engineering.</p>
       </footer>
     </div>
   );

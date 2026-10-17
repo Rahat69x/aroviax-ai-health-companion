@@ -1,6 +1,6 @@
 /**
  * @file medicationOrganizer.ts
- * @description Client-side medication information organizer for MediSupport AI.
+ * @description Client-side medication information organizer for Aroviax.
  *
  * GOVERNANCE RULES:
  * 1. Stores only what the USER enters — never generates dosages or recommendations.
@@ -22,7 +22,7 @@ export interface MedicationEntry {
   addedAt: string;
 }
 
-const STORAGE_KEY = "medisupport_medications";
+const STORAGE_KEY = "aroviax_medications";
 
 export function loadMedications(): MedicationEntry[] {
   if (typeof window === "undefined") return [];

@@ -13,15 +13,15 @@ export function FAQAccordion() {
   const faqs: FAQItem[] = [
     {
       id: "faq-works",
-      question: "How does MediSupport AI work?",
+      question: "How does Aroviax work?",
       answer:
-        "MediSupport AI works in three simple steps: you describe your health concern in plain everyday language, the assistant organizes your symptoms and generates key questions to ask, and you receive structured preparation to help guide your discussion with a licensed healthcare professional.",
+        "Aroviax works in three simple steps: you describe your health concern in plain everyday language, the assistant organizes your symptoms and generates key questions to ask, and you receive structured preparation to help guide your discussion with a licensed healthcare professional.",
     },
     {
       id: "faq-diagnosis",
       question: "Can the AI diagnose my condition?",
       answer:
-        "No. MediSupport AI is strictly an informational support tool and cannot confirm or establish medical diagnoses. Only licensed clinicians with direct clinical context can perform examinations, interpret diagnostic tests, and formulate medical diagnoses.",
+        "No. Aroviax is strictly an informational support tool and cannot confirm or establish medical diagnoses. Only licensed clinicians with direct clinical context can perform examinations, interpret diagnostic tests, and formulate medical diagnoses.",
     },
     {
       id: "faq-reliability",

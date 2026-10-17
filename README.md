@@ -1,4 +1,4 @@
-# MediSupport AI
+# Aroviax — AI Health Companion
 
 > **A Patient-Centric, Non-Diagnostic Healthcare Communication Assistant**  
 > Built for the AI Healthcare Support Hackathon using Next.js 16 (Turbopack), React 19, TypeScript, and Tailwind CSS.
@@ -7,7 +7,7 @@
 
 ## 🏥 Overview & Purpose
 
-**MediSupport AI** is designed to bridge the communication gap between patients, caregivers, and licensed healthcare professionals. It empowers users to articulate symptoms clearly, organize clinical timelines, deconstruct complex medical terminology, redact sensitive personal health identifiers, and prepare actionable questions for clinical consultations.
+**Aroviax** is designed to bridge the communication gap between patients, caregivers, and licensed healthcare professionals. It empowers users to articulate symptoms clearly, organize clinical timelines, deconstruct complex medical terminology, redact sensitive personal health identifiers, and prepare actionable questions for clinical consultations.
 
 ### Core Non-Diagnostic Invariants
 1. **Never Diagnoses:** The system strictly refuses to speculate on definitive clinical conditions or calculate diagnostic probabilities.
@@ -19,7 +19,7 @@
 
 ## 🎨 Design System & Color Palette
 
-MediSupport AI adheres to a modern, calm, accessible healthcare aesthetic:
+Aroviax adheres to a modern, calm, accessible healthcare aesthetic:
 
 | Role | Color Name | Hex Code |
 | :--- | :--- | :--- |
@@ -39,7 +39,7 @@ MediSupport AI adheres to a modern, calm, accessible healthcare aesthetic:
 
 ## 🚀 Key Features
 
-MediSupport AI includes 10 integrated healthcare communication tools accessible via the unified `/assistant` workspace and homepage:
+Aroviax includes 10 integrated healthcare communication tools accessible via the unified `/assistant` workspace and homepage:
 
 1. **Guided Symptom Organizer (`/assistant?tab=symptom-organizer`)**
    - 6-step structured questionnaire capturing onset, duration, user-rated severity (0–10), qualities, bodily location, triggers, relieving factors, and doctor questions.
@@ -92,7 +92,7 @@ MediSupport AI includes 10 integrated healthcare communication tools accessible 
 
 ## 🔌 Backend REST API Interfaces
 
-MediSupport AI provides comprehensive Next.js server-side API endpoints:
+Aroviax provides comprehensive Next.js server-side API endpoints:
 
 - `POST /api/chat` — Conservative non-diagnostic conversational responses with emergency interception.
 - `POST /api/symptom-summary` — Formats structured symptom summaries and verifies safety signals.
@@ -139,7 +139,7 @@ npm run build
 
 ## ⚙️ Environment Configuration
 
-MediSupport AI works **out-of-the-box with zero configuration**. If no API keys are provided, it operates seamlessly in 100% deterministic, private, non-diagnostic local mode with zero external network dependencies.
+Aroviax works **out-of-the-box with zero configuration**. If no API keys are provided, it operates seamlessly in 100% deterministic, private, non-diagnostic local mode with zero external network dependencies.
 
 To optionally connect external AI providers, copy .env.example to .env.local:
 

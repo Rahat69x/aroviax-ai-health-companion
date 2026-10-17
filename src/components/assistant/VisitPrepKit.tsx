@@ -375,7 +375,7 @@ export function VisitPrepKit({ isCaregiverMode }: VisitPrepKitProps) {
                 <h3>Medications & Allergies (User-Entered)</h3>
               </div>
               <p className="text-xs text-slate-500">
-                Self-reported for your visit discussion. MediSupport AI does NOT perform drug interaction checks or give dosing advice.
+                Self-reported for your visit discussion. Aroviax does NOT perform drug interaction checks or give dosing advice.
               </p>
 
               <div>
@@ -540,7 +540,7 @@ export function VisitPrepKit({ isCaregiverMode }: VisitPrepKitProps) {
                   Patient Appointment Summary
                 </span>
                 <span className="text-[10px] text-slate-500 font-mono">
-                  MediSupport AI Prep Kit
+                  Aroviax Prep Kit
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 italic">

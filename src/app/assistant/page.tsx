@@ -117,8 +117,8 @@ export default function AssistantPage() {
                   <Stethoscope className="w-4 h-4" />
                 </div>
                 <span className="font-bold text-base text-[#172554] tracking-tight">
-                  MediSupport<span className="text-[#0D817C]"> AI</span>
-                  <span className="text-xs text-[#64748B] font-normal hidden md:inline ml-2">Workspace</span>
+                  Aroviax
+                  <span className="text-xs text-[#64748B] font-normal hidden md:inline ml-2">— AI Health Companion</span>
                 </span>
               </div>
             </div>
@@ -226,7 +226,7 @@ export default function AssistantPage() {
       <footer className="bg-white border-t border-[#E2E8F0] py-5 text-xs text-[#64748B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2 flex-wrap">
-            <span>MediSupport AI Workspace</span>
+            <span>Aroviax Workspace</span>
             <span>&bull;</span>
             <Link href="/safety" className="hover:text-[#0D817C] underline">Safety</Link>
             <span>&bull;</span>

@@ -43,7 +43,7 @@ export function InteractiveDemoSection() {
       id: "init-1",
       role: "assistant",
       content:
-        "Hello! I am MediSupport AI. I'm here to help you understand general health information, organize your symptoms, and prepare clear questions for your healthcare professional.",
+        "Hello! I am Aroviax, your AI Health Companion. I'm here to help you understand general health information, organize your symptoms, and prepare clear questions for your healthcare professional.",
       timestamp: "Just now",
       safetyNotice:
         "Reminder: I am an informational AI assistant, not a doctor. I cannot provide a medical diagnosis or treatment plan.",
@@ -141,7 +141,7 @@ export function InteractiveDemoSection() {
           "Are there specific warning signs that should prompt me to contact your office immediately?",
         ],
         safetyNotice:
-          "Educational Demonstration: MediSupport AI is an informational tool. Consult a qualified clinician for personalized medical advice.",
+          "Educational Demonstration: Aroviax is an informational tool. Consult a qualified clinician for personalized medical advice.",
       };
       setMessages((prev) => [...prev, fallbackMsg]);
       setErrorMessage("Note: Operating in local demonstration mode. Responses are structured for illustrative appointment prep.");
@@ -160,7 +160,7 @@ export function InteractiveDemoSection() {
   };
 
   const handleCopySummary = (msg: ChatMessage, index: number) => {
-    let summaryText = `MediSupport AI Preparation Summary\n`;
+    let summaryText = `Aroviax Preparation Summary\n`;
     summaryText += `---------------------------------\n`;
     summaryText += `${msg.content}\n\n`;
 
@@ -208,7 +208,7 @@ export function InteractiveDemoSection() {
             id="demo-heading"
             className="text-3xl sm:text-4xl font-extrabold text-[#172554] tracking-tight mb-4"
           >
-            Experience MediSupport AI in Action
+            Experience Aroviax in Action
           </h2>
           <p className="text-base text-[#334155] leading-relaxed">
             Test how the assistant helps organize questions, demystify medical terms, and structure
@@ -227,7 +227,7 @@ export function InteractiveDemoSection() {
               <div>
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-sm text-[#172554]">
-                    MediSupport Assistant
+                    Aroviax Assistant
                   </span>
                   <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#E8F6F4] text-[#0D817C] border border-[#0D817C]/20">
                     Live Demo Mode
@@ -266,7 +266,7 @@ export function InteractiveDemoSection() {
           <div className="bg-amber-50 border-b border-amber-200 px-4 py-2.5 flex items-start gap-2.5 text-xs text-amber-900">
             <ShieldAlert className="w-4 h-4 text-[#B45309] shrink-0 mt-0.5" />
             <div className="flex-1">
-              <strong>Safety Notice:</strong> MediSupport AI is an educational demonstration tool.
+              <strong>Safety Notice:</strong> Aroviax is an educational demonstration tool.
               It does not diagnose conditions, prescribe medications, or replace human doctors.
               For medical emergencies, immediately call your local emergency service.
             </div>
@@ -554,7 +554,7 @@ export function InteractiveDemoSection() {
               </button>
             </form>
             <div className="mt-2 text-center text-[11px] text-[#64748B]">
-              MediSupport AI does not replace your doctor. No personal identifiers or medical records are saved.
+              Aroviax does not replace your doctor. No personal identifiers or medical records are saved.
             </div>
           </div>
         </div>

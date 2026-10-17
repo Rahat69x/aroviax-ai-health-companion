@@ -55,7 +55,7 @@ export function SymptomJournal() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.setAttribute("href", url);
-    link.setAttribute("download", `medisupport_symptom_journal.csv`);
+    link.setAttribute("download", `aroviax_symptom_journal.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

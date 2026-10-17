@@ -303,7 +303,7 @@ export function DocumentExplainer() {
               <h4 className="font-bold text-[#172554]">Document Review & Context</h4>
             </div>
             <p className="text-sm text-[#334155]">
-              This tool organizes information extracted from your document. MediSupport AI does not calculate diagnostic probabilities or alter medical values. Review all findings directly with your healthcare provider.
+              This tool organizes information extracted from your document. Aroviax does not calculate diagnostic probabilities or alter medical values. Review all findings directly with your healthcare provider.
             </p>
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-sm text-amber-900">
               <strong>Ambiguity warning:</strong> Lab values, measurements, and clinical abbreviations depend heavily on context, personal history, age, and individual laboratory reference ranges. A number alone does not determine health or illness.

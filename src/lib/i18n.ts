@@ -1,6 +1,6 @@
 /**
  * @file i18n.ts
- * @description Internationalization (i18n) scaffolding for MediSupport AI supporting English & Bangla (বাংলা).
+ * @description Internationalization (i18n) scaffolding for Aroviax supporting English & Bangla (বাংলা).
  *
  * CRITICAL CLINICAL GOVERNANCE NOTICE:
  * 1. Translations of health terms are educational and must NOT be treated as clinically equivalent
@@ -77,8 +77,8 @@ export interface I18nDictionary {
 
 export const DICTIONARIES: Record<SupportedLanguage, I18nDictionary> = {
   en: {
-    appName: "MediSupport AI",
-    tagline: "Plain-language health information and appointment preparation",
+    appName: "Aroviax",
+    tagline: "AI Health Companion",
     emergencyAlert: "Emergency Warning",
     emergencyNotice:
       "If you may be experiencing a medical emergency, contact local emergency services immediately.",
@@ -138,11 +138,11 @@ export const DICTIONARIES: Record<SupportedLanguage, I18nDictionary> = {
       openInAssistant: "Open Tool",
     },
     safetyDisclaimer:
-      "MediSupport AI is an educational demonstration tool. It does not provide medical diagnoses, triage acute conditions, or formulate treatment plans.",
+      "Aroviax is an educational demonstration tool. It does not provide medical diagnoses, triage acute conditions, or formulate treatment plans.",
   },
   bn: {
-    appName: "মেডিসাপোর্ট এআই",
-    tagline: "সহজ ভাষায় স্বাস্থ্য তথ্য এবং চিকিৎসকের অ্যাপয়েন্টমেন্ট প্রস্তুতি",
+    appName: "অ্যারোভিয়াক্স",
+    tagline: "এআই হেলথ কম্প্যানিয়ন (AI Health Companion)",
     emergencyAlert: "জরুরি সতর্কবার্তা",
     emergencyNotice:
       "আপনি যদি কোনো জরুরি শারীরিক সমস্যার সম্মুখীন হন, তবে অবিলম্বে জরুরি সেবায় (৯৯৯ / ১৬২৬৩) যোগাযোগ করুন।",

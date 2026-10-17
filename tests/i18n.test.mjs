@@ -9,7 +9,7 @@ test("i18n: supports both English (en) and Bangla (bn)", () => {
 
 test("i18n: English dictionary has complete navigation, emergency, and tool keys", () => {
   const en = DICTIONARIES.en;
-  assert.equal(en.appName, "MediSupport AI");
+  assert.equal(en.appName, "Aroviax");
   assert.ok(en.emergencyNotice.includes("emergency"));
   assert.equal(en.nav.home, "Home");
   assert.equal(en.nav.assistant, "Try Assistant");
@@ -18,7 +18,7 @@ test("i18n: English dictionary has complete navigation, emergency, and tool keys
 
 test("i18n: Bangla dictionary has non-empty localized strings for all sections", () => {
   const bn = DICTIONARIES.bn;
-  assert.equal(bn.appName, "মেডিসাপোর্ট এআই");
+  assert.equal(bn.appName, "অ্যারোভিয়াক্স");
   assert.ok(bn.emergencyNotice.includes("জরুরি"));
   assert.equal(bn.nav.home, "হোম");
   assert.ok(bn.nav.assistant.length > 0);

@@ -16,9 +16,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "MediSupport AI | Plain-Language Health Information & Appointment Preparation",
+  title: "Aroviax — AI Health Companion",
   description:
-    "MediSupport AI helps you understand general health information in simple language, organize your symptoms, and prepare clear questions for your healthcare provider. Not a doctor or diagnostic tool.",
+    "Aroviax — AI Health Companion helps you understand general health information in simple language, organize your symptoms, and prepare clear questions for your healthcare provider. Not a doctor or diagnostic tool.",
   keywords: [
     "health information",
     "doctor appointment preparation",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     "plain language health",
     "healthcare AI assistant",
   ],
-  authors: [{ name: "MediSupport AI Team" }],
+  authors: [{ name: "Aroviax Team" }],
   openGraph: {
-    title: "MediSupport AI | Health Questions Deserve Clear Answers",
+    title: "Aroviax — AI Health Companion",
     description:
       "Understand general health terminology, organize your concerns, and prepare meaningful questions for your doctor.",
     type: "website",

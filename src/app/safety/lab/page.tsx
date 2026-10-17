@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowLeft, ShieldCheck, CheckCircle2, Beaker, Terminal } from "lucide-react";
 
 export const metadata = {
-  title: "Responsible AI & Safety Lab | MediSupport AI",
-  description: "Guardrail architecture, refusal policies, and benchmark test evaluation table for MediSupport AI.",
+  title: "Responsible AI & Safety Lab | Aroviax — AI Health Companion",
+  description: "Guardrail architecture, refusal policies, and benchmark test evaluation table for Aroviax.",
 };
 
 export default function SafetyLabPage() {
@@ -71,7 +71,7 @@ export default function SafetyLabPage() {
             Responsible AI & Guardrails Lab
           </h1>
           <p className="text-base text-slate-600 max-w-2xl mx-auto">
-            A transparent breakdown of how MediSupport AI handles edge cases, enforces clinical refusals,
+            A transparent breakdown of how Aroviax handles edge cases, enforces clinical refusals,
             and detects acute emergencies before output generation.
           </p>
         </div>
@@ -206,7 +206,7 @@ export default function SafetyLabPage() {
 
       {/* Footer */}
       <footer className="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
-        <p>&copy; 2026 MediSupport AI Project. Transparent Responsible AI Engineering.</p>
+        <p>&copy; 2026 Aroviax Project. Transparent Responsible AI Engineering.</p>
       </footer>
     </div>
   );

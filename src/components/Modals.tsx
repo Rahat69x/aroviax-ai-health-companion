@@ -92,14 +92,14 @@ export function SafetyModal({
           <span>Non-Diagnostic Disclaimer</span>
         </div>
         <p className="text-xs text-amber-800">
-          MediSupport AI is an educational technology prototype. It is NOT a doctor, medical device,
+          Aroviax is an educational technology prototype. It is NOT a doctor, medical device,
           or clinical diagnostic tool.
         </p>
       </div>
 
       <h4 className="font-bold text-[#172554]">1. Core Purpose</h4>
       <p>
-        The primary objective of MediSupport AI is health literacy and communication support. It
+        The primary objective of Aroviax is health literacy and communication support. It
         empowers users to organize their thoughts, learn general health terminology, and draft
         questions before visiting a certified physician.
       </p>
@@ -211,7 +211,7 @@ export function TermsModal({
 
       <h4 className="font-bold text-[#172554]">1. Not Healthcare Advice</h4>
       <p>
-        The content provided across MediSupport AI is for informational purposes only. It does not
+        The content provided across Aroviax is for informational purposes only. It does not
         constitute formal medical advice, clinical diagnosis, or a doctor-patient relationship.
       </p>
 

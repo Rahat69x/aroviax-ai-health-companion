@@ -61,11 +61,11 @@ export function AssistantChatTab({
       id: "init-assistant",
       role: "assistant",
       content: isCaregiverMode
-        ? "Hello! I am MediSupport AI in Caregiver Mode. I'm here to help you organize observations and questions on behalf of a family member or loved one."
-        : "Hello! I am MediSupport AI. I'm here to help you understand general health information, organize your symptoms, and prepare clear questions for your healthcare professional.",
+        ? "Hello! I am Aroviax in Caregiver Mode. I'm here to help you organize observations and questions on behalf of a family member or loved one."
+        : "Hello! I am Aroviax, your AI Health Companion. I'm here to help you understand general health information, organize your symptoms, and prepare clear questions for your healthcare professional.",
       timestamp: "Just now",
       generalInformation:
-        "Health information can be overwhelming. MediSupport AI structures what you share into organized points for your appointment.",
+        "Health information can be overwhelming. Aroviax structures what you share into organized points for your appointment.",
       whatImUnsureAbout:
         "AI cannot view medical charts, interpret physiological tests, or confirm a diagnosis. Always verify with a clinician.",
       whenToSeekCare:
@@ -190,7 +190,7 @@ export function AssistantChatTab({
           "What is the most likely cause for my symptoms?",
           "Are there specific warning signs that should prompt me to call your clinic immediately?",
         ],
-        safetyNotice: "Educational Demonstration: MediSupport AI is an informational tool.",
+        safetyNotice: "Educational Demonstration: Aroviax is an informational tool.",
       };
       setMessages((prev) => [...prev, fallbackMsg]);
       setErrorMessage("Note: Connection issue encountered. Showing local structured guidance.");
@@ -207,7 +207,7 @@ export function AssistantChatTab({
   };
 
   const handleCopySummary = (msg: ChatMessage, index: number) => {
-    let text = `MediSupport AI Question Summary\n`;
+    let text = `Aroviax Question Summary\n`;
     text += `==============================\n\n`;
     text += `${msg.content}\n\n`;
 
@@ -310,7 +310,7 @@ export function AssistantChatTab({
             <p className="text-xs text-slate-500">
               {localOnlyMode
                 ? "Running locally on device (0 network requests)"
-                : "Connected to MediSupport AI backend"}
+                : "Connected to Aroviax backend"}
             </p>
           </div>
         </div>
